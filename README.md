@@ -1,75 +1,83 @@
-🌍 Monitor de Calidad del Aire (CDMX)
+Air Quality Monitor – CDMX
 
-Dashboard interactivo desarrollado en Python y Streamlit para monitorear, visualizar y analizar datos históricos y en tiempo real de la calidad del aire en la Ciudad de México. Utiliza la API de Open-Meteo para obtener datos meteorológicos precisos.
+Interactive dashboard built with Python and Streamlit to monitor, visualize, and analyze historical and real-time air quality data in Mexico City.
+It uses the Open-Meteo API to retrieve accurate meteorological and air-quality information.
 
-🚀 Características
+Features
+Modular Architecture (ETL)
 
-Pipeline ETL Modular: Extracción (API), Transformación (Pandas) y Visualización (Plotly) desacoplados.
+Extraction (API): Robust connection to the Open-Meteo API.
 
-Visualización Avanzada:
+Transformation: Data cleaning, feature engineering, and time-series manipulation with Pandas.
 
-Series de tiempo interactivas con límites referenciales de la OMS.
+Visualization: Dynamic, high-quality charts built with Plotly.
 
-Mapas de calor para identificar patrones horarios de contaminación.
+Advanced Visualizations
 
-Diagramas de caja (Boxplots) para análisis de distribución semanal.
+Interactive time series with WHO reference thresholds.
 
-Insights Automatizados: Algoritmos simples que generan texto descriptivo sobre las mejores y peores horas para actividades al aire libre.
+Heatmaps revealing hourly pollution trends.
 
-Optimización: Uso de cache para minimizar llamadas a la API y mejorar la velocidad de carga.
+Boxplots showing weekly pollutant distribution.
 
-🛠️ Tecnologías Utilizadas
+Automated Insights
 
-Python 3.8+
+Simple algorithms that generate descriptive text about:
 
-Streamlit: Frontend y gestión del estado de la aplicación.
+Best hours for outdoor activities.
 
-Pandas: Limpieza, manipulación de series de tiempo y manejo de datos categóricos.
+Worst pollution periods.
 
-Plotly: Gráficos interactivos.
+Optimization
 
-Requests: Conexión HTTP robusta con manejo de errores.
+Caching system to reduce API calls and significantly improve loading speed.
 
-📦 Instalación y Uso
+Technologies Used
 
-Clonar el repositorio:
+-Python 3.8+
 
-git clone [https://github.com/tu-usuario/monitor-calidad-aire.git](https://github.com/tu-usuario/monitor-calidad-aire.git)
-cd monitor-calidad-aire
+-Streamlit — UI and application state
 
+-Pandas — Data cleaning and manipulation
 
-Crear un entorno virtual (Opcional pero recomendado):
+-Plotly — Interactive charting
 
+Requests — Robust HTTP communication:
+
+📦 Installation & Usage
+# Clone the repository
+git clone https://github.com/your-user/air-quality-monitor.git
+cd air-quality-monitor
+
+# Create virtual environment (optional but recommended)
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+source venv/bin/activate      # Windows: venv\Scripts\activate
 
-
-Instalar dependencias:
-
+# Install dependencies
 pip install -r requirements.txt
 
-
-Ejecutar la aplicación:
-
+# Run the application
 streamlit run dashboard.py
 
+📂 Project Structure
+├── api_download.py     # Open-Meteo API connection and data fetching  
+├── cleaning.py         # Data cleaning and feature engineering  
+├── visualization.py    # Plot generation using Plotly  
+├── dashboard.py        # Main Streamlit app  
+├── requirements.txt    # Project dependencies  
+└── README.md           # Documentation  
 
-📂 Estructura del Proyecto
+📊 Data Sources
 
-├── api_download.py    # Módulo de conexión con Open-Meteo API
-├── cleaning.py        # Limpieza de datos y Feature Engineering
-├── visualization.py   # Generación de gráficos con Plotly
-├── dashboard.py       # Punto de entrada (Script principal de Streamlit)
-├── requirements.txt   # Dependencias del proyecto
-└── README.md          # Documentación
+Data is fetched from the Open-Meteo Air Quality API.
+The dashboard defaults to the coordinates of Mexico City’s Zócalo, but you can easily modify the location inside api_download.py.
 
+Contributions
 
-📊 Datos
+Contributions are welcome!
+Please open an issue before submitting a pull request to discuss your proposal.
 
-Los datos son obtenidos de Open-Meteo Air Quality API. El dashboard está configurado por defecto para las coordenadas del Zócalo de la CDMX, pero es fácilmente adaptable a otras ubicaciones modificando api_download.py.
+Author
 
-🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir qué te gustaría cambiar.
-
-Desarrollado con ❤️ usando Streamlit.
+Developed by Heriberto Ganesha Cortés Valdez, using Streamlit.
+l25121393@morelia.tecnm.mx
